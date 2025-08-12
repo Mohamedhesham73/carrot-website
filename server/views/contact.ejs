@@ -1,0 +1,61 @@
+<%- include('layout') %>
+<section class="section">
+  <h1>Contact</h1>
+  <form id="contactForm">
+    <div class="field">
+      <label>Name</label>
+      <input name="name" required minlength="2" />
+    </div>
+    <div class="field">
+      <label>Email</label>
+      <input name="email" type="email" required />
+    </div>
+    <div class="field">
+      <label>Message</label>
+      <textarea name="message" rows="5" required minlength="10"></textarea>
+    </div>
+    <!-- Honeypot -->
+    <div style="position:absolute;left:-9999px" aria-hidden="true">
+      <input name="company" tabindex="-1" autocomplete="off" />
+    </div>
+    <button class="btn" type="submit">Send</button>
+    <div id="formStatus" class="mt"></div>
+  </form>
+</section>
+<script>
+  (function () {
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusEl.textContent = 'Sending...';
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(data),
+        });
+        const json = await res.json();
+        if (!res.ok || json.status !== 'ok') {
+          const msg = json?.errors?.map?.(e => `${e.field}: ${e.msg}`).join(', ') || json?.error || 'Failed to send';
+          statusEl.textContent = msg;
+          statusEl.style.color = 'crimson';
+          return;
+        }
+        statusEl.textContent = 'Thanks! We’ll be in touch shortly.';
+        statusEl.style.color = 'green';
+        form.reset();
+      } catch (err) {
+        statusEl.textContent = 'Network error. Please try again.';
+        statusEl.style.color = 'crimson';
+      }
+    });
+  })();
+</script>
+<script src="/js/contact.js" defer></script>
+<%- include('partials/footer') %>
+

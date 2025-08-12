@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title><%= title || 'Carrot' %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="/styles/styles.css" rel="stylesheet" />
+  <meta name="description" content="Carrot is a growth-focused marketing agency: Social, SEO, Ads, and Web." />
+<link rel="canonical" href="http://localhost:3000/" />
+<meta property="og:title" content="<%= title || 'Carrot — Marketing that Grows' %>" />
+<meta property="og:description" content="Performance-first marketing without the fluff." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:3000/" />
+<meta name="twitter:card" content="summary_large_image" />
+
+</head>
+<body>
+  <header class="container">
+    <nav class="nav">
+      <a class="logo" href="/">Carrot</a>
+<div class="links">
+  <a class="<%= (typeof page!=='undefined' && page==='home') ? 'active' : '' %>" href="/">Home</a>
+<a class="<%= (typeof page!=='undefined' && page==='about') ? 'active' : '' %>" href="/about">About</a>
+<a class="<%= (typeof page!=='undefined' && page==='services') ? 'active' : '' %>" href="/services">Services</a>
+<a class="<%= (typeof page!=='undefined' && page==='portfolio') ? 'active' : '' %>" href="/portfolio">Portfolio</a>
+<a class="<%= (typeof page!=='undefined' && page==='contact') ? 'active' : '' %>" href="/contact">Contact</a>
+
+</div>
+    </nav>
+  </header>
+  <main class="container">

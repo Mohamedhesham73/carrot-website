@@ -20,10 +20,15 @@ const rateLimit = require('express-rate-limit');
 const compression = require('compression');
 const morgan = require('morgan');
 
+// ⬇️ Admin & store requires (your lines)
+const basicAuth = require('./middleware/basicAuth');
+const leadsStore = require('./leadsStore');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
+/* ---------- Security, perf, logging ---------- */
 app.use(
   helmet({
     contentSecurityPolicy: NODE_ENV === 'production'
@@ -31,18 +36,17 @@ app.use(
           useDefaults: true,
           directives: {
             "default-src": ["'self'"],
-            "script-src": ["'self'"],   // we load /js/contact.js from same origin
-            "style-src": ["'self'"],    // if you later use Google Fonts, we'll add them here
+            "script-src": ["'self'"],   // /js/contact.js from same origin
+            "style-src": ["'self'"],
             "img-src": ["'self'", "data:"],
             "connect-src": ["'self'"],  // fetch to /api/contact
             "object-src": ["'none'"]
           }
         }
-      : false, // keep CSP off in dev for convenience
+      : false, // keep CSP off in dev
     crossOriginEmbedderPolicy: false,
   })
 );
-
 app.use(compression());
 app.use(morgan('dev'));
 
@@ -50,10 +54,9 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// views + static
+/* ---------- Views & static ---------- */
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-
 app.use(
   express.static(
     path.join(__dirname, '../public'),
@@ -61,16 +64,22 @@ app.use(
   )
 );
 
-
-/* ---------- Routes ---------- */
-// pages
+/* ---------- Page routes ---------- */
 app.get('/',         (_req, res) => res.render('home',      { title: 'Carrot — Home',      page: 'home' }));
 app.get('/about',    (_req, res) => res.render('about',     { title: 'About — Carrot',     page: 'about' }));
 app.get('/services', (_req, res) => res.render('services',  { title: 'Services — Carrot',  page: 'services' }));
 app.get('/portfolio',(_req, res) => res.render('portfolio', { title: 'Portfolio — Carrot', page: 'portfolio' }));
 app.get('/contact',  (_req, res) => res.render('contact',   { title: 'Contact — Carrot',   page: 'contact' }));
+app.get('/pricing', (_req, res) => res.render('pricing', { title: 'Pricing — Carrot', page: 'pricing' }));
 
-// API (apply rate limiter ONLY to contact endpoint)
+
+/* ---------- Admin route (basic auth) ---------- */
+app.get('/admin/leads', basicAuth, (req, res) => {
+  const leads = leadsStore.readLast(200);
+  res.render('admin/leads', { title: 'Leads — Admin', page: '', leads });
+});
+
+/* ---------- API (rate limit ONLY contact) ---------- */
 const apiLimiter = rateLimit({
   windowMs: 10 * 60 * 1000, // 10 min
   max: 5,
@@ -80,12 +89,12 @@ const apiLimiter = rateLimit({
 const contactRouter = require('./routes/contact');
 app.use('/api/contact', apiLimiter, contactRouter);
 
-/* ---------- 404 & Error handlers (AFTER routes) ---------- */
+/* ---------- 404 & Error handlers ---------- */
 app.use((req, res) => res.status(404).render('404', { title: 'Not found — Carrot', page: '' }));
 app.use((err, _req, res, _next) => {
   console.error(err);
   res.status(500).render('500', { title: 'Server error — Carrot', page: '' });
 });
 
-/* ---------- Start server LAST ---------- */
+/* ---------- Start server ---------- */
 app.listen(PORT, () => console.log(`Server → http://localhost:${PORT}  [${NODE_ENV}]`));

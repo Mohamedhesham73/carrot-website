@@ -1,7 +1,131 @@
 <%- include('layout') %>
-<section class="section">
-  <h1>About Carrot</h1>
-  <p>We’re a performance-first marketing agency focused on real growth, not vanity metrics.</p>
-  <p>From strategy to execution across Social, SEO, Paid Ads, and Web, we keep things simple and effective.</p>
+<!-- layout.ejs -->
+<main class="<%= page==='home' ? 'p-0' : 'container py-5' %>">
+
+<!-- Page header -->
+<section class="section" data-aos="fade-up">
+  <h1 class="mb-2">About Carrot</h1>
+  <p class="lead text-muted mb-0">
+    At Carrot Agency, we craft smart, custom marketing strategies designed to elevate your brand and drive real growth.
+     From impactful social media campaigns to targeted paid ads and strategic SEO, we deliver results that matter.
+      Our team works hand-in-hand with you to understand your business, your audience, and your vision.
+       Whether you’re launching a new product or scaling your presence, we’re here to turn your goals into measurable success.
+     💡 We don’t just promote — we partner with you to build something meaningful and long-lasting.WE'VE WORKED WITH CLIENTS ACROSS THE UAE, SAUDI ARABIA, KUWAIT, EGYPT
+      - AND GLOBALLY IN TURKEY, RUSSIA, AND CANADA.
+  </p>
 </section>
+
+<!-- What we do (quick checklist) -->
+<section class="section" data-aos="fade-up">
+  <div class="row g-4">
+    <div class="col-lg-6">
+      <h3 class="h5 mb-3">What we actually do</h3>
+      <ul class="list-unstyled checklist m-0">
+        <li><span class="check">✓</span> Build a go-to-market you can execute in 90 days</li>
+        <li><span class="check">✓</span> Run social & personal brand systems that don’t burn out your team</li>
+        <li><span class="check">✓</span> Launch full-funnel ads with creative that keeps CAC down</li>
+        <li><span class="check">✓</span> Ship fast websites and landing pages that convert</li>
+        <li><span class="check">✓</span> Write content that ranks and turns into pipeline</li>
+      </ul>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card p-3 h-100">
+        <div class="d-flex align-items-center gap-3 mb-2">
+          <div class="icon"><span class="fw-bold text-orange">WHY</span></div>
+          <h3 class="h5 m-0">Why Carrot?</h3>
+        </div>
+        <p class="text-muted mb-2">
+          We don’t sell hours—we ship outcomes. Clear strategy, tight execution, and transparent reporting.
+        </p>
+        <div class="d-flex flex-wrap gap-2">
+          <span class="badge-tag">Performance-first</span>
+          <span class="badge-tag">Founder-friendly</span>
+          <span class="badge-tag">Fast iteration</span>
+          <span class="badge-tag">No fluff</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our approach (4 steps) -->
+<section class="section" data-aos="fade-up">
+  <h3 class="h5 mb-3">Our approach</h3>
+  <div class="row g-4">
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100 p-3">
+        <div class="step-badge">1</div>
+        <h5>Strategy sprint</h5>
+        <p class="text-muted m-0">ICP, offers, messaging, and channel plan. 2–3 workshops → a 90-day roadmap.</p>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100 p-3">
+        <div class="step-badge">2</div>
+        <h5>Content engine</h5>
+        <p class="text-muted m-0">Monthly content plan with hooks, formats, and briefs for brand & founders.</p>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100 p-3">
+        <div class="step-badge">3</div>
+        <h5>Creative & ads</h5>
+        <p class="text-muted m-0">Launch ads with a testing matrix. Weekly optimizations focused on ROAS/CAC.</p>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100 p-3">
+        <div class="step-badge">4</div>
+        <h5>Web & CRO</h5>
+        <p class="text-muted m-0">Fast pages, clear UX, and experiments that steadily lift conversion rate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Results snapshot -->
+<section class="section text-center" data-aos="fade-up">
+  <div class="row g-4">
+    <div class="col-6 col-md-3"><div class="stat">+230%</div><div class="text-muted">Avg. SEO traffic</div></div>
+    <div class="col-6 col-md-3"><div class="stat">3.6×</div><div class="text-muted">ROAS on Meta</div></div>
+    <div class="col-6 col-md-3"><div class="stat">-42%</div><div class="text-muted">Avg. CPC</div></div>
+    <div class="col-6 col-md-3"><div class="stat">1.8s</div><div class="text-muted">Avg. load time</div></div>
+  </div>
+</section>
+
+<!-- Who we help -->
+<section class="section" data-aos="fade-up">
+  <h3 class="h5 mb-3">Who we help</h3>
+  <div class="d-flex flex-wrap gap-2">
+    <span class="badge-tag">E-commerce</span>
+    <span class="badge-tag">Food & Beverage</span>
+    <span class="badge-tag">SaaS</span>
+    <span class="badge-tag">Retail</span>
+    <span class="badge-tag">Clinics</span>
+    <span class="badge-tag">Local services</span>
+  </div>
+</section>
+
+<!-- Founder note (optional image) -->
+<section class="section" data-aos="fade-up">
+  <div class="row g-4 align-items-center">
+    <div class="col-lg-7">
+      <h3 class="h5 mb-2">A note from our founder</h3>
+      <p class="text-muted">
+        We started Carrot to be the partner we wished we had—one that says “no” to busywork and “yes” to work that moves the
+        business. If you want a team that treats your brand like their own, let’s talk.
+      </p>
+      <div class="mt-2">
+        <a class="btn btn-primary" href="/contact">Work with us</a>
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <div class="card p-0 overflow-hidden">
+        <img src="/images/about/user1.jpg" alt="Carrot founder" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
 <%- include('partials/footer') %>

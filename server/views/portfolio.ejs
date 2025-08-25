@@ -1,10 +1,126 @@
 <%- include('layout') %>
+
 <section class="section">
-  <h1>Portfolio</h1>
-  <div class="grid">
-    <div class="card">Case Study #1</div>
-    <div class="card">Case Study #2</div>
-    <div class="card">Case Study #3</div>
+  <div class="container container-slim">
+    <h1 class="h2 mb-3">Portfolio</h1>
+    <p class="text-muted mb-4">A few snapshots from recent engagements.</p>
+
+    <div class="portfolio-grid">
+      <!-- 1 -->
+      <article class="case-card" data-aos="fade-up">
+        <div class="case-thumb">
+          <img src="/images/clients/BOBAQUEEN.png" alt="Boba Queen brand" loading="lazy" decoding="async">
+        </div>
+        <div class="case-body">
+          <div class="case-meta">SEO, Content</div>
+          <h5 class="case-title">BOBAQUEEN</h5>
+          <p class="mb-2">+180% organic sessions in 6 months.</p>
+          <div class="case-tags">
+            <span class="tag">Technical</span><span class="tag">On-page</span><span class="tag">Content</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="case-card" data-aos="fade-up" data-aos-delay="60">
+        <div class="case-thumb">
+          <img src="/images/clients/goodies.jpg" alt="Goodies creative" loading="lazy" decoding="async">
+        </div>
+        <div class="case-body">
+          <div class="case-meta">Technical SEO</div>
+          <h5 class="case-title">goodies</h5>
+          <p class="mb-2">Indexation fixes → +64% clicks (GSC).</p>
+          <div class="case-tags">
+            <span class="tag">Core Web Vitals</span><span class="tag">Schema</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="case-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="case-thumb">
+          <img src="/images/clients/Vitrine.png" alt="Vitrine" loading="lazy" decoding="async">
+        </div>
+        <div class="case-body">
+          <div class="case-meta">Paid Social</div>
+          <h5 class="case-title">Vitrine</h5>
+          <p class="mb-2">3.2x ROAS, CAC down 35%.</p>
+          <div class="case-tags">
+            <span class="tag">Meta</span><span class="tag">Creative</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="case-card" data-aos="fade-up">
+        <div class="case-thumb">
+          <img src="/images/clients/MLAMEH.png" alt="MLAMEH" loading="lazy" decoding="async">
+        </div>
+        <div class="case-body">
+          <div class="case-meta">SMM</div>
+          <h5 class="case-title">MLAMEH</h5>
+          <p class="mb-2">+220% reach, +3.1% ER in 45 days.</p>
+          <div class="case-tags">
+            <span class="tag">Content plan</span><span class="tag">Short-form</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="case-card" data-aos="fade-up" data-aos-delay="60">
+        <div class="case-thumb">
+          <img src="/images/clients/SHENO.png" alt="SHENO" loading="lazy" decoding="async">
+        </div>
+        <div class="case-body">
+          <div class="case-meta">Web, CRO</div>
+          <h5 class="case-title">SHENO</h5>
+          <p class="mb-2">Speed & UX work → higher form submits.</p>
+          <div class="case-tags">
+            <span class="tag">Speed</span><span class="tag">UX</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="case-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="case-thumb">
+          <img src="/images/clients/Sweetplus.png" alt="Sweetplus" loading="lazy" decoding="async">
+        </div>
+        <div class="case-body">
+          <div class="case-meta">Branding, Web</div>
+          <h5 class="case-title">Sweetplus</h5>
+          <p class="mb-2">Launch site in 3 weeks; refreshed brand kit.</p>
+          <div class="case-tags">
+            <span class="tag">Design</span><span class="tag">Web</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7 -->
+      <article class="case-card" data-aos="fade-up">
+        <div class="case-thumb">
+          <img src="/images/clients/MR.DOUGH.png" alt="Mr Dough" loading="lazy" decoding="async">
+        </div>
+        <div class="case-body">
+          <div class="case-meta">Paid Social</div>
+          <h5 class="case-title">Mr. Dough</h5>
+          <p class="mb-2">Full-funnel setup, steady CAC ↓ month-over-month.</p>
+          <div class="case-tags">
+            <span class="tag">Meta</span><span class="tag">TikTok</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- CTA tile (fills the grid nicely with an odd count) -->
+      <aside class="case-card case-cta" data-aos="fade-up">
+        <div class="p-3">
+          <h4 class="mb-2">Want results like these?</h4>
+          <p class="text-muted m-0">Tell us your goal — we’ll propose a plan.</p>
+          <a class="btn btn-primary btn-lg mt-3" href="/contact">Start a project</a>
+        </div>
+      </aside>
+    </div>
   </div>
 </section>
+
 <%- include('partials/footer') %>

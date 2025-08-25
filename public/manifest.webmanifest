@@ -1,0 +1,42 @@
+{
+  "name": "Carrot — Marketing & Advertising Agency",
+  "short_name": "Carrot",
+  "description": "Social, SEO, Paid, and Web that actually grows your brand.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#FF7F27",
+  "theme_color": "#FF7F27",
+  "icons": [
+    {
+      "src": "/images/brand/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/brand/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/brand/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/brand/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    { "name": "Contact", "url": "/contact" },
+    { "name": "Portfolio", "url": "/portfolio" },
+    { "name": "Pricing", "url": "/pricing" }
+  ]
+}

@@ -1,0 +1,112 @@
+<%- include('layout') %>
+<!-- layout.ejs -->
+<main class="<%= page==='home' ? 'p-0' : 'container py-5' %>">
+
+<section class="section pricing">
+  <h1 class="h2 mb-4">Pricing</h1>
+    <!-- ADD: Service Packs (starting prices) -->
+  <section class="section" id="packs" data-aos="fade-up">
+    <h2 class="h5 mb-3">Service Packs — starting at</h2>
+    <div class="row g-4">
+
+      <!-- Social Media -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="card h-100 p-4">
+          <div class="d-flex align-items-center justify-content-between">
+            <h5 class="mb-0">Social Media</h5>
+            <span class="badge-tag">Starting at</span>
+          </div>
+          <div class="display-6 fw-bold mt-2">EGP 7,000</div>
+          <ul class="text-muted small mt-3">
+            <li>Scope details coming soon</li>
+          </ul>
+          <a href="/contact?pack=social-media" class="btn btn-outline-secondary mt-auto">Enquire</a>
+        </div>
+      </div>
+
+      <!-- Websites -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
+        <div class="card h-100 p-4">
+          <div class="d-flex align-items-center justify-content-between">
+            <h5 class="mb-0">Websites</h5>
+            <span class="badge-tag">Starting at</span>
+          </div>
+          <div class="display-6 fw-bold mt-2">EGP 9,000</div>
+          <ul class="text-muted small mt-3">
+            <li>Scope details coming soon</li>
+          </ul>
+          <a href="/contact?pack=websites" class="btn btn-outline-secondary mt-auto">Enquire</a>
+        </div>
+      </div>
+
+      <!-- Google Ads -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+        <div class="card h-100 p-4">
+          <div class="d-flex align-items-center justify-content-between">
+            <h5 class="mb-0">Google Ads</h5>
+            <span class="badge-tag">Starting at</span>
+          </div>
+          <div class="display-6 fw-bold mt-2">EGP 8,000</div>
+          <ul class="text-muted small mt-3">
+            <li>Scope details coming soon</li>
+          </ul>
+          <a href="/contact?pack=google-ads" class="btn btn-outline-secondary mt-auto">Enquire</a>
+        </div>
+      </div>
+
+      <!-- Designs Packages -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="card h-100 p-4">
+          <div class="d-flex align-items-center justify-content-between">
+            <h5 class="mb-0">Designs Packages</h5>
+            <span class="badge-tag">Starting at</span>
+          </div>
+          <div class="display-6 fw-bold mt-2">EGP 2,000</div>
+          <ul class="text-muted small mt-3">
+            <li>Scope details coming soon</li>
+          </ul>
+          <a href="/contact?pack=designs" class="btn btn-outline-secondary mt-auto">Enquire</a>
+        </div>
+      </div>
+
+      <!-- Reels -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
+        <div class="card h-100 p-4">
+          <div class="d-flex align-items-center justify-content-between">
+            <h5 class="mb-0">Reels</h5>
+            <span class="badge-tag">Starting at</span>
+          </div>
+          <div class="display-6 fw-bold mt-2">EGP 500</div>
+          <ul class="text-muted small mt-3">
+            <li>Scope details coming soon</li>
+          </ul>
+          <a href="/contact?pack=reels" class="btn btn-outline-secondary mt-auto">Enquire</a>
+        </div>
+      </div>
+
+      <!-- SEO -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+        <div class="card h-100 p-4">
+          <div class="d-flex align-items-center justify-content-between">
+            <h5 class="mb-0">SEO</h5>
+            <span class="badge-tag">Starting at</span>
+          </div>
+          <div class="display-6 fw-bold mt-2">EGP 6,000</div>
+          <ul class="text-muted small mt-3">
+            <li>Scope details coming soon</li>
+          </ul>
+          <a href="/contact?pack=seo" class="btn btn-outline-secondary mt-auto">Enquire</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="small text-muted mt-3">
+      All prices are starting points and may vary by scope, languages, and timelines.
+    </div>
+  </section>
+  <!-- /ADD -->
+
+  <p class="text-muted mt-3">Custom scopes available — <a href="/contact">talk to us</a>.</p>
+  
+</section>
+<%- include('partials/footer') %>

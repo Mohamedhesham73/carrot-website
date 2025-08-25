@@ -1,61 +1,120 @@
 <%- include('layout') %>
-<section class="section">
-  <h1>Contact</h1>
-  <form id="contactForm">
-    <div class="field">
-      <label>Name</label>
-      <input name="name" required minlength="2" />
+<!-- layout.ejs -->
+<main class="<%= page==='home' ? 'p-0' : 'container py-5' %>">
+
+<section class="py-4">
+  <h1 class="h2 mb-4">Contact</h1>
+
+  
+
+  <!-- ADD: start split layout + left column (form) -->
+  <div class="row g-4 align-items-start" data-aos="fade-up">
+    <div class="col-lg-6">
+
+      <!-- ADD: frame around the existing form (no changes inside the form) -->
+      <div class="frame frame--lift p-3 p-md-4">
+  <!-- /ADD -->
+
+  <form id="contactForm" class="row g-3 col-12 col-md-8 col-lg-6">
+
+<!-- Pretty pack indicator + hidden field -->
+<div class="col-12 mb-2">
+  <div id="packPillWrap" class="d-none">
+    <span class="pack-pill d-inline-flex align-items-center">
+      <span class="me-1">Selected:</span>
+      <strong id="selectedPackLabel"></strong>
+      <button type="button" id="clearPack" class="x-btn ms-2" aria-label="Clear">×</button>
+    </span>
+  </div>
+  <input type="hidden" name="pack" id="selectedPack" />
+</div>
+
+
+    <div class="col-12">
+      <label class="form-label">Name</label>
+      <input class="form-control" name="name" required minlength="2" />
     </div>
-    <div class="field">
-      <label>Email</label>
-      <input name="email" type="email" required />
+
+    <div class="col-12">
+      <label class="form-label">Email</label>
+      <input class="form-control" name="email" type="email" required />
     </div>
-    <div class="field">
-      <label>Message</label>
-      <textarea name="message" rows="5" required minlength="10"></textarea>
+
+    <div class="col-12">
+      <label class="form-label">Message</label>
+      <textarea class="form-control" name="message" rows="5" required minlength="10"></textarea>
     </div>
+
     <!-- Honeypot -->
     <div style="position:absolute;left:-9999px" aria-hidden="true">
       <input name="company" tabindex="-1" autocomplete="off" />
     </div>
-    <button class="btn" type="submit">Send</button>
-    <div id="formStatus" class="mt"></div>
+
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Send</button>
+      <div id="formStatus" class="mt-2 small"></div>
+    </div>
   </form>
+
+      <!-- ADD: close frame + left column -->
+      </div>
+    </div>
+    <!-- /ADD -->
+
+    <!-- ADD: right column with contact details -->
+    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="80">
+      <div class="frame frame--lift p-3 p-md-4 h-100">
+        <h2 class="h5 mb-2">Let’s talk</h2>
+        <p class="text-muted mb-3">Tell us your target and timeline — we typically reply within 24 hours.</p>
+
+        <div class="d-flex flex-column gap-2">
+          <div>
+            <div class="text-muted small">Email</div>
+            <a class="fw-semibold" href="mailto:Carrot_onlinemarketing_agency@hotmail.com">Carrot_onlinemarketing_agency@hotmail.com</a>
+          </div>
+          <div>
+            <div class="text-muted small">WhatsApp</div>
+            <!-- Replace the number with your real one -->
+            <a class="fw-semibold" href="https://wa.me/201234567890" rel="noopener" target="_blank">+20 101 509 7482</a>
+          </div>
+          <div>
+            <div class="text-muted small">Hours</div>
+            <div class="fw-semibold">Sun–Thu · 10:00–18:00 EET</div>
+          </div>
+          <div>
+            <div class="text-muted small">Locations</div>
+            <div class="fw-semibold">Cairo · Remote clients in UAE, KSA, KW, TR, RU, CA</div>
+          </div>
+        </div>
+
+        <hr class="my-3">
+
+        <div class="row g-2">
+          <div class="col-6">
+            <div class="card p-2 h-100">
+              <div class="small text-muted">Typical response</div>
+              <div class="fw-bold">≤ 24h</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card p-2 h-100">
+              <div class="small text-muted">Next step</div>
+              <div class="fw-bold">15-min intro call</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3 small text-muted">
+          By submitting the form you agree to be contacted about your request. We don’t spam or resell data.
+        </div>
+      </div>
+    </div>
+    <!-- /ADD: right column -->
+  </div>
+  <!-- /ADD: end split layout -->
+
 </section>
-<script>
-  (function () {
-    const form = document.getElementById('contactForm');
-    const statusEl = document.getElementById('formStatus');
-    if (!form) return;
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      statusEl.textContent = 'Sending...';
-      const data = Object.fromEntries(new FormData(form).entries());
-
-      try {
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(data),
-        });
-        const json = await res.json();
-        if (!res.ok || json.status !== 'ok') {
-          const msg = json?.errors?.map?.(e => `${e.field}: ${e.msg}`).join(', ') || json?.error || 'Failed to send';
-          statusEl.textContent = msg;
-          statusEl.style.color = 'crimson';
-          return;
-        }
-        statusEl.textContent = 'Thanks! We’ll be in touch shortly.';
-        statusEl.style.color = 'green';
-        form.reset();
-      } catch (err) {
-        statusEl.textContent = 'Network error. Please try again.';
-        statusEl.style.color = 'crimson';
-      }
-    });
-  })();
-</script>
+<!-- No inline script (CSP-friendly). Use external JS only. -->
 <script src="/js/contact.js" defer></script>
 <%- include('partials/footer') %>
-

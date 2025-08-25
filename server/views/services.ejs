@@ -1,12 +1,200 @@
 <%- include('layout') %>
-<section class="section">
-  <h1>Services</h1>
-  <ul class="list">
-    <li><strong>Social Media Marketing</strong> — strategy, content, growth.</li>
-    <li><strong>SEO & Content</strong> — on-page, technical, blogs.</li>
-    <li><strong>Branding & Design</strong> — identity, guidelines, creatives.</li>
-    <li><strong>Paid Ads</strong> — Meta, Google, TikTok, performance.</li>
-    <li><strong>Web Design & CRO</strong> — fast, responsive, conversion-focused.</li>
-  </ul>
+
+<!-- Carrot-colored hero with diagonal footer -->
+<section class="slice slice-orange diagonal-bottom" data-aos="fade-up">
+  <div class="container py-5">
+    <h1 class="mb-2">Services</h1>
+    <p class="lead mb-3">Pick a pillar or blend them — fast iteration, clear reporting, measurable growth.</p>
+
+    <!-- Sticky local subnav -->
+    <nav class="subnav">
+      <a href="#smm">SMM</a>
+      <a href="#seo">SEO</a>
+      <a href="#ads">ADS</a>
+      <a href="#web">WEB</a>
+      <a href="#addons">Packages</a>
+    </nav>
+  </div>
 </section>
+
+
+<!-- 4 Pillars -->
+<section class="section" data-aos="fade-up">
+  <div class="container">
+    <div class="row g-4">
+      <!-- SMM -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up">
+        <div class="service-card h-100 p-3">
+          <div class="service-icon">SMM</div>
+          <h4 class="h5 mb-1">Social Media Marketing</h4>
+          <p class="text-muted mb-2">Strategy, production, and growth across the platforms that matter.</p>
+          <div class="chips">
+            <span class="chip">Content plan</span>
+            <span class="chip">Personal branding</span>
+            <span class="chip">Community</span>
+          </div>
+          <ul class="mt-3 mb-0 small text-muted ps-3">
+            <li>Monthly calendars & creative</li>
+            <li>Short-form production (Reels/TikTok)</li>
+            <li>Engagement & moderation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SEO -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="60">
+        <div class="service-card h-100 p-3">
+          <div class="service-icon">SEO</div>
+          <h4 class="h5 mb-1">SEO & Content</h4>
+          <p class="text-muted mb-2">Technical foundations, on-page fixes, and content that ranks & converts.</p>
+          <div class="chips">
+            <span class="chip">Audits</span>
+            <span class="chip">Content briefs</span>
+            <span class="chip">Internal linking</span>
+          </div>
+          <ul class="mt-3 mb-0 small text-muted ps-3">
+            <li>GA4 & GSC setup</li>
+            <li>Keyword research & clustering</li>
+            <li>Editorial production & QA</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ADS -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="120">
+        <div class="service-card h-100 p-3">
+          <div class="service-icon">ADS</div>
+          <h4 class="h5 mb-1">Paid Social & Search</h4>
+          <p class="text-muted mb-2">Full-funnel ads with creative that keeps CAC down and ROAS up.</p>
+          <div class="chips">
+            <span class="chip">Meta</span>
+            <span class="chip">Google</span>
+            <span class="chip">TikTok</span>
+          </div>
+          <ul class="mt-3 mb-0 small text-muted ps-3">
+            <li>Account setup & structure</li>
+            <li>Creative testing matrix</li>
+            <li>Weekly optimization & reports</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- WEB -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="180">
+        <div class="service-card h-100 p-3">
+          <div class="service-icon">WEB</div>
+          <h4 class="h5 mb-1">Web & CRO</h4>
+          <p class="text-muted mb-2">Fast, responsive pages and experiments that lift conversion rates.</p>
+          <div class="chips">
+            <span class="chip">Landing pages</span>
+            <span class="chip">Speed</span>
+            <span class="chip">Analytics</span>
+          </div>
+          <ul class="mt-3 mb-0 small text-muted ps-3">
+            <li>Design & build (Webflow/Next/Express)</li>
+            <li>Heatmaps & UX fixes</li>
+            <li>A/B testing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Standalone packages (your extra 4) -->
+<section id="addons" class="section band-alt" data-aos="fade-up">
+  <div class="container">
+    <h3 class="h5 mb-3">Standalone packages</h3>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="addon-card h-100 p-3">
+          <h5 class="mb-1">Content Plan</h5>
+          <p class="text-muted small mb-0">Hooks, formats, and posting cadence for 30–60 days.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="addon-card h-100 p-3">
+          <h5 class="mb-1">Personal Branding</h5>
+          <p class="text-muted small mb-0">Founder/exec presence: topics, outlines, and ghostwriting.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="addon-card h-100 p-3">
+          <h5 class="mb-1">Marketing Strategy</h5>
+          <p class="text-muted small mb-0">ICP, offers, messaging, channels — a 90-day roadmap.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="addon-card h-100 p-3">
+          <h5 class="mb-1">Designs</h5>
+          <p class="text-muted small mb-0">Ad creatives, social kits, and brand collateral packs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How we work -->
+<section class="section" data-aos="fade-up">
+  <div class="container">
+    <h3 class="h5 mb-3">How we work</h3>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3"><div class="card h-100 p-3"><div class="step-badge">1</div><h6>Strategy sprint</h6><p class="text-muted small m-0">Workshops → 90-day plan.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="card h-100 p-3"><div class="step-badge">2</div><h6>Build & launch</h6><p class="text-muted small m-0">Creative, setup, and go-live.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="card h-100 p-3"><div class="step-badge">3</div><h6>Measure</h6><p class="text-muted small m-0">Dashboards, KPIs, insights.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="card h-100 p-3"><div class="step-badge">4</div><h6>Iterate</h6><p class="text-muted small m-0">Weekly tests & improvements.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" data-aos="fade-up">
+  <div class="container">
+    <h3 class="h5 mb-3">FAQs</h3>
+    <div class="accordion" id="svcFaq">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="q1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1">How do we start?</button>
+        </h2>
+        <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#svcFaq">
+          <div class="accordion-body text-muted">We kick off with a strategy sprint to align goals, channels, and KPIs. Then we build a 90-day plan and launch.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="q2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">What do you report on?</button>
+        </h2>
+        <div id="a2" class="accordion-collapse collapse" data-bs-parent="#svcFaq">
+          <div class="accordion-body text-muted">Channel metrics and business outcomes: traffic, leads, ROAS/CAC, conversion rate, and insights from tests.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="q3">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3">Can I combine pillars?</button>
+        </h2>
+        <div id="a3" class="accordion-collapse collapse" data-bs-parent="#svcFaq">
+          <div class="accordion-body text-muted">Yes—most clients mix SMM + ADS or SEO + WEB. We tailor scope and cadence to your goals.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="q4">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4">Do you offer one-off work?</button>
+        </h2>
+        <div id="a4" class="accordion-collapse collapse" data-bs-parent="#svcFaq">
+          <div class="accordion-body text-muted">Absolutely. Content plans, personal branding, strategy docs, and design packs are available as standalone packages.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section text-center" data-aos="fade-up">
+  <div class="container">
+    <h3 class="mb-2">Ready to pick a package?</h3>
+    <p class="text-muted mb-3">Start small or scale up — you’re in control.</p>
+    <a class="btn btn-primary btn-lg" href="/pricing">See pricing</a>
+  </div>
+</section>
+
 <%- include('partials/footer') %>

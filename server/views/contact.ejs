@@ -1,120 +1,86 @@
 <%- include('layout') %>
-<!-- layout.ejs -->
-<main class="<%= page==='home' ? 'p-0' : 'container py-5' %>">
 
 <section class="py-4">
   <h1 class="h2 mb-4">Contact</h1>
 
-  
-
-  <!-- ADD: start split layout + left column (form) -->
   <div class="row g-4 align-items-start" data-aos="fade-up">
+
+    <!-- Left: form -->
     <div class="col-lg-6">
-
-      <!-- ADD: frame around the existing form (no changes inside the form) -->
       <div class="frame frame--lift p-3 p-md-4">
-  <!-- /ADD -->
 
-  <form id="contactForm" class="row g-3 col-12 col-md-8 col-lg-6">
+        <form id="contactForm" class="row g-3">
 
-<!-- Pretty pack indicator + hidden field -->
-<div class="col-12 mb-2">
-  <div id="packPillWrap" class="d-none">
-    <span class="pack-pill d-inline-flex align-items-center">
-      <span class="me-1">Selected:</span>
-      <strong id="selectedPackLabel"></strong>
-      <button type="button" id="clearPack" class="x-btn ms-2" aria-label="Clear">×</button>
-    </span>
-  </div>
-  <input type="hidden" name="pack" id="selectedPack" />
+          <!-- Pack pill indicator -->
+          <div class="col-12">
+            <div id="packPillWrap" class="d-none">
+              <span class="pack-pill d-inline-flex align-items-center">
+                <span class="me-1">Selected:</span>
+                <strong id="selectedPackLabel"></strong>
+                <button type="button" id="clearPack" class="x-btn ms-2" aria-label="Clear">×</button>
+              </span>
+            </div>
+            <input type="hidden" name="pack" id="selectedPack" />
+          </div>
+
+          <div class="col-12">
+            <label class="form-label fw-semibold">Name</label>
+            <input class="form-control" name="name" required minlength="2" placeholder="Your name" />
+          </div>
+
+          <div class="col-12">
+            <label class="form-label fw-semibold">Email</label>
+            <input class="form-control" name="email" type="email" required placeholder="you@example.com" />
+          </div>
+
+          <div class="col-12">
+            <label class="form-label fw-semibold">Message</label>
+            <textarea class="form-control" name="message" rows="5" required
+              minlength="10" maxlength="180"
+              style="resize:none; height:140px"
+              placeholder="Tell us about your brand, goals, and timeline..."></textarea>
+            <div class="d-flex justify-content-end mt-1">
+              <span id="charCount" class="text-muted" style="font-size:.78rem">0 / 180</span>
+            </div>
+          </div>
+
+          <!-- Honeypot -->
+          <div style="position:absolute;left:-9999px" aria-hidden="true">
+            <input name="company" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="col-12">
+            <button class="btn btn-primary px-4" type="submit">Send message</button>
+            <div id="formStatus" class="mt-2 small"></div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <!-- Right: brand banner -->
+    <div class="col-lg-6">
+      <div class="overflow-hidden h-100" style="min-height:340px; border-radius:var(--radius)">
+  <img src="/images/brand/contact.jpeg"
+       alt="Tailored to meet your needs — Carrot Agency"
+       style="width:100%; height:100%; object-fit:cover; object-position:center; display:block; border-radius:var(--radius)">
 </div>
-
-
-    <div class="col-12">
-      <label class="form-label">Name</label>
-      <input class="form-control" name="name" required minlength="2" />
+      <p class="small text-muted mt-2 mb-0">
+        By submitting the form you agree to be contacted about your request.
+        We don't spam or resell data.
+      </p>
     </div>
 
-    <div class="col-12">
-      <label class="form-label">Email</label>
-      <input class="form-control" name="email" type="email" required />
-    </div>
-
-    <div class="col-12">
-      <label class="form-label">Message</label>
-      <textarea class="form-control" name="message" rows="5" required minlength="10"></textarea>
-    </div>
-
-    <!-- Honeypot -->
-    <div style="position:absolute;left:-9999px" aria-hidden="true">
-      <input name="company" tabindex="-1" autocomplete="off" />
-    </div>
-
-    <div class="col-12">
-      <button class="btn btn-primary" type="submit">Send</button>
-      <div id="formStatus" class="mt-2 small"></div>
-    </div>
-  </form>
-
-      <!-- ADD: close frame + left column -->
-      </div>
-    </div>
-    <!-- /ADD -->
-
-    <!-- ADD: right column with contact details -->
-    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="80">
-      <div class="frame frame--lift p-3 p-md-4 h-100">
-        <h2 class="h5 mb-2">Let’s talk</h2>
-        <p class="text-muted mb-3">Tell us your target and timeline — we typically reply within 24 hours.</p>
-
-        <div class="d-flex flex-column gap-2">
-          <div>
-            <div class="text-muted small">Email</div>
-            <a class="fw-semibold" href="mailto:Carrot_onlinemarketing_agency@hotmail.com">Carrot_onlinemarketing_agency@hotmail.com</a>
-          </div>
-          <div>
-            <div class="text-muted small">WhatsApp</div>
-            <!-- Replace the number with your real one -->
-            <a class="fw-semibold" href="https://wa.me/201234567890" rel="noopener" target="_blank">+20 101 509 7482</a>
-          </div>
-          <div>
-            <div class="text-muted small">Hours</div>
-            <div class="fw-semibold">Sun–Thu · 10:00–18:00 EET</div>
-          </div>
-          <div>
-            <div class="text-muted small">Locations</div>
-            <div class="fw-semibold">Cairo · Remote clients in UAE, KSA, KW, TR, RU, CA</div>
-          </div>
-        </div>
-
-        <hr class="my-3">
-
-        <div class="row g-2">
-          <div class="col-6">
-            <div class="card p-2 h-100">
-              <div class="small text-muted">Typical response</div>
-              <div class="fw-bold">≤ 24h</div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="card p-2 h-100">
-              <div class="small text-muted">Next step</div>
-              <div class="fw-bold">15-min intro call</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-3 small text-muted">
-          By submitting the form you agree to be contacted about your request. We don’t spam or resell data.
-        </div>
-      </div>
-    </div>
-    <!-- /ADD: right column -->
   </div>
-  <!-- /ADD: end split layout -->
-
 </section>
 
-<!-- No inline script (CSP-friendly). Use external JS only. -->
+<script>
+  const ta = document.querySelector('[name="message"]');
+  const cc = document.getElementById('charCount');
+  ta.addEventListener('input', () => {
+    cc.textContent = ta.value.length + ' / 180';
+  });
+</script>
+
 <script src="/js/contact.js" defer></script>
 <%- include('partials/footer') %>

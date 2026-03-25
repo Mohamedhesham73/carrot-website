@@ -1,112 +1,203 @@
 <%- include('layout') %>
-<!-- layout.ejs -->
-<main class="<%= page==='home' ? 'p-0' : 'container py-5' %>">
 
 <section class="section pricing">
-  <h1 class="h2 mb-4">Pricing</h1>
-    <!-- ADD: Service Packs (starting prices) -->
-  <section class="section" id="packs" data-aos="fade-up">
-    <h2 class="h5 mb-3">Service Packs — starting at</h2>
-    <div class="row g-4">
 
-      <!-- Social Media -->
-      <div class="col-md-6 col-lg-4" data-aos="fade-up">
-        <div class="card h-100 p-4">
-          <div class="d-flex align-items-center justify-content-between">
-            <h5 class="mb-0">Social Media</h5>
-            <span class="badge-tag">Starting at</span>
-          </div>
-          <div class="display-6 fw-bold mt-2">EGP 7,000</div>
-          <ul class="text-muted small mt-3">
-            <li>Scope details coming soon</li>
-          </ul>
-          <a href="/contact?pack=social-media" class="btn btn-outline-secondary mt-auto">Enquire</a>
-        </div>
-      </div>
-
-      <!-- Websites -->
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
-        <div class="card h-100 p-4">
-          <div class="d-flex align-items-center justify-content-between">
-            <h5 class="mb-0">Websites</h5>
-            <span class="badge-tag">Starting at</span>
-          </div>
-          <div class="display-6 fw-bold mt-2">EGP 9,000</div>
-          <ul class="text-muted small mt-3">
-            <li>Scope details coming soon</li>
-          </ul>
-          <a href="/contact?pack=websites" class="btn btn-outline-secondary mt-auto">Enquire</a>
-        </div>
-      </div>
-
-      <!-- Google Ads -->
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
-        <div class="card h-100 p-4">
-          <div class="d-flex align-items-center justify-content-between">
-            <h5 class="mb-0">Google Ads</h5>
-            <span class="badge-tag">Starting at</span>
-          </div>
-          <div class="display-6 fw-bold mt-2">EGP 8,000</div>
-          <ul class="text-muted small mt-3">
-            <li>Scope details coming soon</li>
-          </ul>
-          <a href="/contact?pack=google-ads" class="btn btn-outline-secondary mt-auto">Enquire</a>
-        </div>
-      </div>
-
-      <!-- Designs Packages -->
-      <div class="col-md-6 col-lg-4" data-aos="fade-up">
-        <div class="card h-100 p-4">
-          <div class="d-flex align-items-center justify-content-between">
-            <h5 class="mb-0">Designs Packages</h5>
-            <span class="badge-tag">Starting at</span>
-          </div>
-          <div class="display-6 fw-bold mt-2">EGP 2,000</div>
-          <ul class="text-muted small mt-3">
-            <li>Scope details coming soon</li>
-          </ul>
-          <a href="/contact?pack=designs" class="btn btn-outline-secondary mt-auto">Enquire</a>
-        </div>
-      </div>
-
-      <!-- Reels -->
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
-        <div class="card h-100 p-4">
-          <div class="d-flex align-items-center justify-content-between">
-            <h5 class="mb-0">Reels</h5>
-            <span class="badge-tag">Starting at</span>
-          </div>
-          <div class="display-6 fw-bold mt-2">EGP 500</div>
-          <ul class="text-muted small mt-3">
-            <li>Scope details coming soon</li>
-          </ul>
-          <a href="/contact?pack=reels" class="btn btn-outline-secondary mt-auto">Enquire</a>
-        </div>
-      </div>
-
-      <!-- SEO -->
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
-        <div class="card h-100 p-4">
-          <div class="d-flex align-items-center justify-content-between">
-            <h5 class="mb-0">SEO</h5>
-            <span class="badge-tag">Starting at</span>
-          </div>
-          <div class="display-6 fw-bold mt-2">EGP 6,000</div>
-          <ul class="text-muted small mt-3">
-            <li>Scope details coming soon</li>
-          </ul>
-          <a href="/contact?pack=seo" class="btn btn-outline-secondary mt-auto">Enquire</a>
-        </div>
-      </div>
-
+  <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-3 mb-5">
+    <div>
+      <h1 class="h2 mb-1">Pricing</h1>
+      <p class="text-muted mb-0">Four clear packages — pick the one that fits where you are right now.</p>
     </div>
-    <div class="small text-muted mt-3">
-      All prices are starting points and may vary by scope, languages, and timelines.
+    <a href="/contact" class="btn btn-primary">Get a custom quote →</a>
+  </div>
+
+  <!-- Packages grid -->
+  <div class="row g-4" data-aos="fade-up">
+
+    <!-- Package 1 -->
+    <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="0">
+      <div class="card h-100 p-4 pricing-card">
+        <div class="pricing-badge">Starter</div>
+        <div class="pricing-price">EGP 15,000<span class="pricing-unit"> / mo</span></div>
+        <p class="text-muted small mb-3">Best for small businesses starting out</p>
+
+        <div class="pricing-section-label">What's included</div>
+        <ul class="pricing-list mb-3">
+          <li>1 platform (Instagram or Facebook)</li>
+          <li>12 posts / month</li>
+          <li>4 reels / month</li>
+          <li>12 designs</li>
+          <li>EGP 2,000 paid ads budget</li>
+          <li class="pricing-list--cross">Shooting not included</li>
+        </ul>
+
+        <div class="pricing-section-label">Expected monthly results</div>
+        <ul class="pricing-results mb-4">
+          <li><span class="result-label">Followers</span><span class="result-val">+300 – 600</span></li>
+          <li><span class="result-label">Reach</span><span class="result-val">20K – 40K</span></li>
+          <li><span class="result-label">Engagement</span><span class="result-val">1K – 2K</span></li>
+        </ul>
+
+        <a href="/contact?pack=starter" class="btn btn-outline-green mt-auto w-100">Get started</a>
+      </div>
+    </div>
+
+    <!-- Package 2 -->
+    <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="80">
+      <div class="card h-100 p-4 pricing-card">
+        <div class="pricing-badge">Growth</div>
+        <div class="pricing-price">EGP 25,000<span class="pricing-unit"> / mo</span></div>
+        <p class="text-muted small mb-3">Best for growing brands</p>
+
+        <div class="pricing-section-label">What's included</div>
+        <ul class="pricing-list mb-3">
+          <li>2 platforms (Instagram + Facebook)</li>
+          <li>16 posts / month</li>
+          <li>8 reels / month</li>
+          <li>16 designs</li>
+          <li>EGP 4,000 paid ads budget</li>
+          <li>1 shooting session / month (basic)</li>
+        </ul>
+
+        <div class="pricing-section-label">Expected monthly results</div>
+        <ul class="pricing-results mb-4">
+          <li><span class="result-label">Followers</span><span class="result-val">+800 – 1.5K</span></li>
+          <li><span class="result-label">Reach</span><span class="result-val">60K – 100K</span></li>
+          <li><span class="result-label">Engagement</span><span class="result-val">3K – 5K</span></li>
+        </ul>
+
+        <a href="/contact?pack=growth" class="btn btn-outline-green mt-auto w-100">Get started</a>
+      </div>
+    </div>
+
+    <!-- Package 3 — highlighted -->
+    <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="160">
+      <div class="card h-100 p-4 pricing-card pricing-card--featured">
+        <div class="pricing-badge pricing-badge--featured">Most Popular</div>
+        <div class="pricing-price">EGP 35,000<span class="pricing-unit"> / mo</span></div>
+        <p class="mb-3" style="opacity:.85">Best for scaling businesses</p>
+
+        <div class="pricing-section-label pricing-section-label--featured">What's included</div>
+        <ul class="pricing-list pricing-list--featured mb-3">
+          <li>3 platforms (Instagram + Facebook + TikTok)</li>
+          <li>20 posts / month</li>
+          <li>12 reels / month</li>
+          <li>20 designs</li>
+          <li>EGP 6,000 paid ads budget</li>
+          <li>2 shooting sessions / month (professional)</li>
+        </ul>
+
+        <div class="pricing-section-label pricing-section-label--featured">Expected monthly results</div>
+        <ul class="pricing-results pricing-results--featured mb-4">
+          <li><span class="result-label">Followers</span><span class="result-val">+2K – 4K</span></li>
+          <li><span class="result-label">Reach</span><span class="result-val">150K – 300K</span></li>
+          <li><span class="result-label">Engagement</span><span class="result-val">7K – 12K</span></li>
+        </ul>
+
+        <a href="/contact?pack=scale" class="btn btn-light mt-auto w-100 fw-semibold">Get started</a>
+      </div>
+    </div>
+
+    <!-- Package 4 -->
+    <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="240">
+      <div class="card h-100 p-4 pricing-card">
+        <div class="pricing-badge">Domination</div>
+        <div class="pricing-price">EGP 45,000<span class="pricing-unit"> / mo</span></div>
+        <p class="text-muted small mb-3">Best for strong brand presence &amp; domination</p>
+
+        <div class="pricing-section-label">What's included</div>
+        <ul class="pricing-list mb-3">
+          <li>4 platforms (Instagram + Facebook + TikTok + LinkedIn)</li>
+          <li>24 posts / month</li>
+          <li>16 reels / month</li>
+          <li>24 designs + advanced creatives</li>
+          <li>EGP 10,000 paid ads budget</li>
+          <li>4 shooting sessions / month (full production)</li>
+        </ul>
+
+        <div class="pricing-section-label">Expected monthly results</div>
+        <ul class="pricing-results mb-4">
+          <li><span class="result-label">Followers</span><span class="result-val">+5K – 10K</span></li>
+          <li><span class="result-label">Reach</span><span class="result-val">400K – 800K</span></li>
+          <li><span class="result-label">Engagement</span><span class="result-val">15K – 30K</span></li>
+        </ul>
+
+        <a href="/contact?pack=domination" class="btn btn-outline-green mt-auto w-100">Get started</a>
+      </div>
+    </div>
+
+  </div><!-- /.row -->
+
+  <p class="small text-muted mt-4">
+    All packages are monthly. Paid ads budget is included in the package price.
+    Custom scopes available — <a href="/contact">talk to us</a>.
+  </p>
+
+  <!-- FAQ -->
+  <section class="section" data-aos="fade-up">
+    <h3 class="h5 mb-3">Common questions</h3>
+    <div class="accordion" id="pricingFaq">
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pq1">
+            Is the paid ads budget included in the price?
+          </button>
+        </h2>
+        <div id="pq1" class="accordion-collapse collapse show" data-bs-parent="#pricingFaq">
+          <div class="accordion-body text-muted">
+            Yes — the ad spend listed in each package is included in the monthly price. You won't receive
+            separate invoices from Meta or TikTok. We manage the full budget on your behalf.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pq2">
+            Can I upgrade or downgrade between packages?
+          </button>
+        </h2>
+        <div id="pq2" class="accordion-collapse collapse" data-bs-parent="#pricingFaq">
+          <div class="accordion-body text-muted">
+            Yes. You can move between packages at the start of any new month. We'll adjust scope and deliverables
+            accordingly with no penalties.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pq3">
+            What does a shooting session include?
+          </button>
+        </h2>
+        <div id="pq3" class="accordion-collapse collapse" data-bs-parent="#pricingFaq">
+          <div class="accordion-body text-muted">
+            Sessions vary by package — basic sessions cover product or lifestyle shots for social content,
+            while professional and full production sessions include a full crew, styling, and edited footage
+            ready for reels and ads. We'll align on the shot list before each session.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pq4">
+            How do I get started?
+          </button>
+        </h2>
+        <div id="pq4" class="accordion-collapse collapse" data-bs-parent="#pricingFaq">
+          <div class="accordion-body text-muted">
+            Click "Get started" on any package above and fill in the contact form — mention which package
+            you're interested in. We'll schedule a free 15-minute intro call to confirm scope and answer
+            any questions before we kick off.
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
-  <!-- /ADD -->
 
-  <p class="text-muted mt-3">Custom scopes available — <a href="/contact">talk to us</a>.</p>
-  
 </section>
+
 <%- include('partials/footer') %>

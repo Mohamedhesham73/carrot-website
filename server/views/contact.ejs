@@ -3,11 +3,11 @@
 <section class="py-4">
   <h1 class="h2 mb-4">Contact</h1>
 
-  <div class="row g-4 align-items-start" data-aos="fade-up">
+  <div class="row g-4 align-items-stretch" data-aos="fade-up">
 
     <!-- Left: form -->
-    <div class="col-lg-6">
-      <div class="frame frame--lift p-3 p-md-4">
+    <div class="col-lg-6 d-flex flex-column">
+      <div class="frame frame--lift p-3 p-md-4 flex-grow-1">
 
         <form id="contactForm" class="row g-3">
 
@@ -58,12 +58,12 @@
       </div>
     </div>
 
-    <!-- Right: brand banner — full width, equal gutters from Bootstrap -->
-    <div class="col-lg-6">
-      <div class="overflow-hidden" style="border-radius:var(--radius)">
+    <!-- Right: brand banner — matches form height -->
+    <div class="col-lg-6 d-flex flex-column">
+      <div class="overflow-hidden flex-grow-1" style="border-radius:var(--radius); min-height:400px">
         <img src="/images/brand/contact.jpeg"
              alt="Tailored to meet your needs — Carrot Agency"
-             style="width:100%; height:auto; display:block; border-radius:var(--radius)">
+             style="width:100%; height:100%; object-fit:cover; display:block; border-radius:var(--radius)">
       </div>
       <p class="small text-muted mt-2 mb-0">
         By submitting the form you agree to be contacted about your request.

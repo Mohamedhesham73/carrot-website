@@ -44,8 +44,8 @@
             </div>
           </div>
 
-          <!-- Honeypot -->
-          <div style="position:absolute;left:-9999px" aria-hidden="true">
+          <!-- Honeypot — completely hidden from view and screen readers -->
+          <div style="display:none; visibility:hidden;" aria-hidden="true">
             <input name="company" tabindex="-1" autocomplete="off" />
           </div>
 
@@ -58,14 +58,14 @@
       </div>
     </div>
 
-    <!-- Right: brand banner -->
-    <div class="col-lg-6">
-      <div class="overflow-hidden h-100" style="min-height:340px; border-radius:var(--radius)">
-  <img src="/images/brand/contact.jpeg"
-       alt="Tailored to meet your needs — Carrot Agency"
-       style="width:100%; height:100%; object-fit:cover; object-position:center; display:block; border-radius:var(--radius)">
-</div>
-      <p class="small text-muted mt-2 mb-0">
+    <!-- Right: brand banner — centered with equal sides -->
+    <div class="col-lg-6 d-flex flex-column align-items-center">
+      <div class="overflow-hidden" style="width:100%; max-width:480px; border-radius:var(--radius)">
+        <img src="/images/brand/contact.jpeg"
+             alt="Tailored to meet your needs — Carrot Agency"
+             style="width:100%; height:auto; display:block; border-radius:var(--radius)">
+      </div>
+      <p class="small text-muted mt-2 mb-0 text-center" style="max-width:480px">
         By submitting the form you agree to be contacted about your request.
         We don't spam or resell data.
       </p>

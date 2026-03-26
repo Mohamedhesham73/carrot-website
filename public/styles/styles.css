@@ -519,3 +519,4 @@ section[id] { scroll-margin-top: 88px; }
   letter-spacing: -.02em;
 }
 
+input[name="company"] { display: none !important; }

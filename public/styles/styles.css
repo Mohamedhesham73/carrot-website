@@ -47,7 +47,6 @@
   --bs-border-color: var(--border);
 }
 
-/* Orange primary button */
 .btn-primary {
   --bs-btn-bg: var(--orange);
   --bs-btn-border-color: var(--orange);
@@ -56,17 +55,13 @@
   --bs-btn-active-bg: #d4621a;
 }
 
-/* Green outline button — used on pricing "Get started" */
 .btn-outline-green {
   color: var(--green);
   border: 1px solid var(--green);
   background: transparent;
   transition: background .15s, color .15s;
 }
-.btn-outline-green:hover {
-  background: var(--green);
-  color: #fff;
-}
+.btn-outline-green:hover { background: var(--green); color: #fff; }
 
 /* =========================================
    2) GLOBAL RESET & BASE
@@ -203,7 +198,7 @@ section[id] { scroll-margin-top: 88px; }
 .table th, .table td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
 
 /* =========================================
-   7) LOGO WALL (MARQUEE) — orange background
+   7) LOGO WALL (MARQUEE)
    ========================================= */
 .client-wall {
   border: 1px solid var(--orange);
@@ -337,8 +332,6 @@ section[id] { scroll-margin-top: 88px; }
 .slice, .slice-orange {
   position: relative; color: #fff;
   background: linear-gradient(135deg, #ff7f27 0%, #ff8a50 60%, #ff9f73 100%);
-  margin-left: calc(var(--bs-gutter-x) * -.5);
-  margin-right: calc(var(--bs-gutter-x) * -.5);
 }
 .slice .container, .slice-orange .container { position: relative; z-index: 1; }
 .slice::before {
@@ -369,6 +362,24 @@ section[id] { scroll-margin-top: 88px; }
 .pack-pill .x-btn { background: transparent; border: 0; color: inherit; font-size: 1rem; line-height: 1; opacity: .6; cursor: pointer; }
 .pack-pill .x-btn:hover { opacity: 1; }
 [data-bs-theme="dark"] .pack-pill { background: rgba(255,138,80,.15); border-color: rgba(255,138,80,.35); color: #ffb893; }
+
+/* Contact banner image — fills column height like the form */
+.contact-banner-wrap {
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 100%;
+  min-height: 420px;
+}
+.contact-banner-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Honeypot — always hidden */
+input[name="company"] { display: none !important; }
 
 /* =========================================
    12) PORTFOLIO PAGE
@@ -415,14 +426,12 @@ section[id] { scroll-margin-top: 88px; }
 .pricing-section-label { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 8px; }
 .pricing-section-label--featured { color: rgba(255,255,255,.65); }
 
-/* Checkmarks in green, cross in muted */
 .pricing-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px; font-size: .875rem; color: var(--muted); }
 .pricing-list li::before { content: "✓  "; color: var(--green); font-weight: 800; }
 .pricing-list--featured { color: rgba(255,255,255,.88); }
 .pricing-list--featured li::before { color: #a8f0c6; }
 .pricing-list--cross::before { content: "✕  " !important; color: var(--muted) !important; opacity: .5; }
 
-/* Result values in green */
 .pricing-results { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 5px; font-size: .875rem; }
 .pricing-results li { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 5px; }
 .pricing-results li:last-child { border-bottom: 0; padding-bottom: 0; }
@@ -488,35 +497,24 @@ section[id] { scroll-margin-top: 88px; }
 .split-hero .split-media { position: absolute; inset: 0 0 0 55%; background: url('/images/brand/cover.jpg') center / cover no-repeat; filter: brightness(.85); }
 @media (max-width: 992px) { .split-hero .split-media { position: static; height: 220px; } }
 
-/* Testimonial avatar initials bubble */
+/* Testimonial avatar */
 .testimonial-avatar {
   width: 38px; height: 38px; border-radius: 50%;
-  background: var(--orange);
-  color: #fff; font-weight: 700; font-size: .95rem;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
+  background: var(--orange); color: #fff; font-weight: 700; font-size: .95rem;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
-
 .testimonial-avatar-logo {
-  width: 38px;
-  height: 38px;
-  min-width: 38px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
-  border: 1px solid var(--border);
-  flex-shrink: 0;
-  display: block;
+  width: 38px; height: 38px; min-width: 38px;
+  border-radius: 50%; object-fit: contain;
+  background: #fff; border: 1px solid var(--border);
+  flex-shrink: 0; display: block;
 }
 
-/* 404 page */
+/* 404 / 500 page */
 .fourofour-number {
   font-size: clamp(5rem, 18vw, 9rem);
-  font-weight: 800;
-  line-height: 1;
+  font-weight: 800; line-height: 1;
   color: transparent;
   -webkit-text-stroke: 3px var(--orange);
   letter-spacing: -.02em;
 }
-
-input[name="company"] { display: none !important; }

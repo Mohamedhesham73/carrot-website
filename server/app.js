@@ -59,7 +59,7 @@ app.get('/about',   (_req, res) => res.render('about',     { title: 'About — C
 app.get('/services',(_req, res) => res.render('services',  { title: 'Services — Carrot',  page: 'services' }));
 app.get('/portfolio',(_req,res) => res.render('portfolio', { title: 'Portfolio — Carrot', page: 'portfolio' }));
 app.get('/pricing', (_req, res) => res.render('pricing',   { title: 'Pricing — Carrot',   page: 'pricing' }));
-app.get('/contact', (_req, res) => res.render('contact',   { title: 'Contact — Carrot',   page: 'contact' }));
+app.get('/contact', (_req, res) => res.render('contact',   { title: 'Contact Us — Carrot Agency',   page: 'contact' }));
 
 /* ---------- API (rate-limit only contact) ---------- */
 const apiLimiter = rateLimit({ windowMs: 10 * 60 * 1000, max: 5, standardHeaders: true, legacyHeaders: false });

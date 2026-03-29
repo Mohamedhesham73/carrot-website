@@ -650,3 +650,33 @@ iframe, embed, object { max-width: 100%; }
   h2 { font-size: 1.35rem; }
   h3 { font-size: 1.15rem; }
 }
+
+/* Scroll to top button */
+#scrollTop {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--orange);
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity .25s, transform .25s, visibility .25s;
+  z-index: 999;
+}
+#scrollTop.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+#scrollTop:hover { background: var(--orange-dark); }

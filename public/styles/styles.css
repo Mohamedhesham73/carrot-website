@@ -548,6 +548,8 @@ input[name="company"] { display: none !important; }
   .hero-cover .lead { font-size: .95rem; }
   .hero-cover .btn { font-size: .9rem; padding: .5rem 1rem; }
 
+  .footer-col:last-child { grid-column: 1 / -1; }
+
   /* Footer — brand takes full width, rest in 2 cols */
   .footer-col--brand { grid-column: 1 / -1; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
   .footer-grid { gap: 24px; }

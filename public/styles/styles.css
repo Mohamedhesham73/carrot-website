@@ -468,9 +468,8 @@ input[name="company"] { display: none !important; }
   padding: 56px 0 0; margin-top: 80px;
 }
 
-.footer-grid { display: grid; gap: 40px; grid-template-columns: 1fr; }
-@media (min-width: 640px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 992px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+.footer-grid { display: grid; gap: 32px; grid-template-columns: 1fr 1fr; }
+@media (min-width: 992px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; } }
 
 .footer-logo { height: 28px; width: auto; display: block; }
 
@@ -548,6 +547,10 @@ input[name="company"] { display: none !important; }
   .hero-cover .display-5 { font-size: 1.6rem; }
   .hero-cover .lead { font-size: .95rem; }
   .hero-cover .btn { font-size: .9rem; padding: .5rem 1rem; }
+
+  /* Footer — brand takes full width, rest in 2 cols */
+  .footer-col--brand { grid-column: 1 / -1; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .footer-grid { gap: 24px; }
 
   /* Inner page cover — show full image on mobile */
   .page-cover .cover-img {

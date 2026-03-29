@@ -118,6 +118,7 @@ main > section:first-child { margin-top: 0 !important; }
   height: clamp(320px, 45vw, 520px);
   object-fit: cover;
   object-position: center 30%;
+  filter: brightness(.75);
 }
 
 .hero { padding: 80px 0; }
@@ -128,7 +129,7 @@ main > section:first-child { margin-top: 0 !important; }
 }
 .hero-cover::before {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(170deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.05) 100%);
+  background: linear-gradient(170deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.25) 100%);
 }
 [data-bs-theme="dark"] .hero-cover::before {
   background: linear-gradient(170deg, rgba(0,0,0,.65) 0%, rgba(0,0,0,.4) 100%);
@@ -362,26 +363,12 @@ section[id] { scroll-margin-top: 88px; }
 .pack-pill .x-btn:hover { opacity: 1; }
 [data-bs-theme="dark"] .pack-pill { background: rgba(255,138,80,.15); border-color: rgba(255,138,80,.35); color: #ffb893; }
 
-/* Contact row layout */
-.contact-row {
-  text-align: left;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0;
-}
-@media (min-width: 992px) {
-  .contact-row {
-    margin-right: -80px;
-    margin-left: -80px;
-    flex-wrap: nowrap;
-  }
-}
-
 /* Contact banner */
 .contact-banner-wrap {
   border-radius: var(--radius);
   overflow: hidden;
   height: 100%;
+  min-height: 420px;
 }
 .contact-banner-wrap img {
   width: 100%;
@@ -394,17 +381,7 @@ section[id] { scroll-margin-top: 88px; }
 /* Contact textarea — no resize, fixed height */
 textarea[name="message"] {
   resize: none !important;
-  height: 100px !important;
-}
-
-/* Compact contact form labels */
-.contact-row .form-label {
-  margin-bottom: 0.2rem;
-  font-size: 0.88rem;
-}
-.contact-row .form-control {
-  padding: 0.4rem 0.65rem;
-  font-size: 0.9rem;
+  height: 140px !important;
 }
 
 /* Honeypot — always hidden */
@@ -546,4 +523,107 @@ input[name="company"] { display: none !important; }
   color: transparent;
   -webkit-text-stroke: 3px var(--orange);
   letter-spacing: -.02em;
+}
+
+/* =========================================
+   16) RESPONSIVE — MOBILE / TABLET / TV
+   ========================================= */
+
+/* --- Phone (max 576px) --- */
+@media (max-width: 576px) {
+  /* Hero */
+  .hero-cover { min-height: 45vh; }
+  .hero-cover .display-5 { font-size: 1.6rem; }
+  .hero-cover .lead { font-size: .95rem; }
+  .hero-cover .btn { font-size: .9rem; padding: .5rem 1rem; }
+
+  /* Page cover */
+  .page-cover .cover-img { height: 38vh; }
+
+  /* Sections */
+  .section { padding: 36px 0; }
+
+  /* Quote card */
+  .quote-card { padding: 20px 16px 16px; }
+  .quote-card blockquote { font-size: 1rem; padding-left: 8px; }
+
+  /* Pricing */
+  .pricing-price { font-size: 1.3rem; }
+
+  /* Contact — stack vertically */
+  .contact-banner-wrap { min-height: 220px; }
+
+  /* Footer */
+  .site-footer { padding: 36px 0 0; margin-top: 48px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  /* Subnav — scrollable on mobile */
+  .subnav { border-radius: 12px; }
+
+  /* Stats */
+  .stat { font-size: 1.6rem; }
+
+  /* Navbar */
+  .navbar-collapse { border-top: 1px solid var(--border); margin-top: .5rem; padding-top: .5rem; }
+
+  /* Buttons in hero */
+  .hero-cover .d-flex { gap: .5rem !important; }
+}
+
+/* --- Small tablets (577px–767px) --- */
+@media (min-width: 577px) and (max-width: 767px) {
+  .hero-cover { min-height: 50vh; }
+  .page-cover .cover-img { height: 45vh; }
+  .contact-banner-wrap { min-height: 280px; }
+}
+
+/* --- Tablets (768px–991px) --- */
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero-cover { min-height: 55vh; }
+  .page-cover .cover-img { height: 52vh; }
+
+  /* Pricing cards — 2 per row */
+  .pricing-card { margin-bottom: 1rem; }
+
+  /* Contact banner */
+  .contact-banner-wrap { min-height: 320px; }
+}
+
+/* --- Large screens / TVs (min 1400px) --- */
+@media (min-width: 1400px) {
+  .container { max-width: 1320px; }
+  .hero-cover .display-5 { font-size: 3rem; }
+  .stat { font-size: 2.5rem; }
+  .section { padding: 80px 0; }
+}
+
+/* --- Ultra wide / TVs (min 1920px) --- */
+@media (min-width: 1920px) {
+  .container { max-width: 1600px; }
+  body { font-size: 1.1rem; }
+  .hero-cover .display-5 { font-size: 3.5rem; }
+  .page-cover .cover-img { height: 55vh; }
+  .brand-logo { height: 44px; }
+}
+
+/* --- Touch devices — remove hover effects that feel broken --- */
+@media (hover: none) {
+  .frame--lift:hover { transform: none; box-shadow: none; }
+  .service-card:hover { transform: none; box-shadow: var(--shadow-sm); }
+  .addon-card:hover { transform: none; }
+  .logo-item:hover { transform: none; }
+  .pricing-card:hover { transform: none; }
+  .case-card:hover { transform: none; }
+}
+
+/* --- Ensure images never overflow on any device --- */
+img { max-width: 100%; height: auto; }
+iframe, embed, object { max-width: 100%; }
+
+/* --- Prevent text from being too small on mobile --- */
+@media (max-width: 576px) {
+  p, li, .text-muted { font-size: .95rem; }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.35rem; }
+  h3 { font-size: 1.15rem; }
 }

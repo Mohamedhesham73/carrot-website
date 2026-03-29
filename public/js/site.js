@@ -11,10 +11,10 @@ window.addEventListener('beforeunload', () => {
 window.addEventListener('DOMContentLoaded', () => {
   if (window.AOS) {
     AOS.init({
-      once: false,   // animate every time you scroll back
-      mirror: true,  // animate out on scroll past
-      duration: 700,
-      offset: 80,
+      once: true,
+      mirror: false,
+      duration: 600,
+      offset: 60,
       easing: 'ease-out-cubic'
     });
   }

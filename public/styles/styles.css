@@ -118,7 +118,6 @@ main > section:first-child { margin-top: 0 !important; }
   height: clamp(320px, 45vw, 520px);
   object-fit: cover;
   object-position: center 30%;
-  filter: brightness(.75);
 }
 
 .hero { padding: 80px 0; }

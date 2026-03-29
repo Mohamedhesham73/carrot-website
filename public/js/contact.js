@@ -24,9 +24,12 @@
         statusEl.style.color = 'crimson';
         return;
       }
-      statusEl.textContent = 'Thanks! We’ll be in touch shortly.';
+      statusEl.textContent = 'Thanks! We\'ll be in touch shortly.';
       statusEl.style.color = 'green';
       form.reset();
+      // Reset counter after form reset
+      const cc = document.getElementById('charCount');
+      if (cc) cc.textContent = '0 / 180';
     } catch (err) {
       statusEl.textContent = 'Network error. Please try again.';
       statusEl.style.color = 'crimson';
@@ -37,7 +40,7 @@
 // Pack prefill with pretty pill (CSP-safe, no inline)
 (() => {
   const params   = new URLSearchParams(location.search);
-  const pack     = params.get('pack'); // e.g., 'websites'
+  const pack     = params.get('pack');
   const hidden   = document.getElementById('selectedPack');
   const wrap     = document.getElementById('packPillWrap');
   const labelEl  = document.getElementById('selectedPackLabel');
@@ -53,7 +56,6 @@
     clearBtn.addEventListener('click', () => {
       if (hidden) hidden.value = '';
       if (wrap) wrap.classList.add('d-none');
-      // remove ?pack= from the URL without reloading
       params.delete('pack');
       const q = params.toString();
       history.replaceState({}, '', location.pathname + (q ? ('?' + q) : ''));
@@ -73,4 +75,12 @@
   }
 })();
 
-
+// Character counter for message textarea
+(() => {
+  const ta = document.querySelector('[name="message"]');
+  const cc = document.getElementById('charCount');
+  if (!ta || !cc) return;
+  ta.addEventListener('input', () => {
+    cc.textContent = ta.value.length + ' / 180';
+  });
+})();

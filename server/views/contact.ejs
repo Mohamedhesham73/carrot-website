@@ -72,17 +72,7 @@
   </div>
 </section>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const ta = document.querySelector('[name="message"]');
-    const cc = document.getElementById('charCount');
-    if (ta && cc) {
-      ta.addEventListener('input', () => {
-        cc.textContent = ta.value.length + ' / 180';
-      });
-    }
-  });
-</script>
+
 
 <script src="/js/contact.js" defer></script>
 <%- include('partials/footer') %>

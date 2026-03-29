@@ -380,12 +380,13 @@ section[id] { scroll-margin-top: 100px; }
   overflow: hidden;
   height: 100%;
   min-height: 420px;
+  background: #ff7f27;
 }
 .contact-banner-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: left center;
+  object-fit: contain;
+  object-position: 55% center;
   display: block;
 }
 
@@ -548,8 +549,17 @@ input[name="company"] { display: none !important; }
   .hero-cover .lead { font-size: .95rem; }
   .hero-cover .btn { font-size: .9rem; padding: .5rem 1rem; }
 
-  /* Page cover */
-  .page-cover .cover-img { height: 38vh; }
+  /* Inner page cover — show full image on mobile */
+  .page-cover .cover-img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+    object-position: center top;
+  }
+
+  /* Services slice — reduce diagonal space on mobile */
+  .diagonal-bottom { padding-bottom: calc(24px + 40px); }
+  .diagonal-bottom::after { height: 40px; }
 
   /* Sections */
   .section { padding: 36px 0; }
@@ -568,7 +578,7 @@ input[name="company"] { display: none !important; }
   .site-footer { padding: 36px 0 0; margin-top: 48px; }
   .footer-bottom { flex-direction: column; text-align: center; }
 
-  /* Subnav — scrollable on mobile */
+  /* Subnav */
   .subnav { border-radius: 12px; }
 
   /* Stats */
@@ -592,11 +602,7 @@ input[name="company"] { display: none !important; }
 @media (min-width: 768px) and (max-width: 991px) {
   .hero-cover { min-height: 55vh; }
   .page-cover .cover-img { height: 52vh; }
-
-  /* Pricing cards — 2 per row */
   .pricing-card { margin-bottom: 1rem; }
-
-  /* Contact banner */
   .contact-banner-wrap { min-height: 320px; }
 }
 
@@ -617,7 +623,7 @@ input[name="company"] { display: none !important; }
   .brand-logo { height: 44px; }
 }
 
-/* --- Touch devices — remove hover effects that feel broken --- */
+/* --- Touch devices — remove hover effects --- */
 @media (hover: none) {
   .frame--lift:hover { transform: none; box-shadow: none; }
   .service-card:hover { transform: none; box-shadow: var(--shadow-sm); }
@@ -627,7 +633,7 @@ input[name="company"] { display: none !important; }
   .case-card:hover { transform: none; }
 }
 
-/* --- Ensure images never overflow on any device --- */
+/* --- Ensure images never overflow --- */
 img { max-width: 100%; height: auto; }
 iframe, embed, object { max-width: 100%; }
 

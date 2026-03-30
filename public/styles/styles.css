@@ -537,6 +537,12 @@ input[name="company"] { display: none !important; }
   letter-spacing: -.02em;
 }
 
+/* Services slice — flush against cover on all screens */
+.page-cover + section.slice-orange {
+  margin-top: 0;
+  display: block;
+}
+
 /* =========================================
    16) RESPONSIVE — MOBILE / TABLET / TV
    ========================================= */
@@ -550,6 +556,8 @@ input[name="company"] { display: none !important; }
   .hero-cover .btn { font-size: .9rem; padding: .5rem 1rem; }
 
   .footer-col:last-child { grid-column: 1 / -1; }
+
+  .page-cover { display: block; line-height: 0; }
 
   /* Footer — brand takes full width, rest in 2 cols */
   .footer-col--brand { grid-column: 1 / -1; padding-bottom: 16px; border-bottom: 1px solid var(--border); }

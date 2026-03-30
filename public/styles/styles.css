@@ -574,6 +574,18 @@ input[name="company"] { display: none !important; }
   .quote-card { padding: 20px 16px 16px; }
   .quote-card blockquote { font-size: 1rem; padding-left: 8px; }
 
+  /* Testimonials on mobile */
+  .quote-card .quote-mark { display: none; }
+  .quote-card { padding: 20px 16px 16px; }
+  .quote-card blockquote { padding-left: 0; }
+  #testimonials .carousel-control-prev,
+  #testimonials .carousel-control-next { display: none; }
+  #testimonials .carousel-indicators { 
+    position: static; 
+    margin-top: 16px; 
+    justify-content: center;
+  }
+
   /* Pricing */
   .pricing-price { font-size: 1.3rem; }
 

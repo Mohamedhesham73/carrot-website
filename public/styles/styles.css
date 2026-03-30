@@ -563,8 +563,9 @@ input[name="company"] { display: none !important; }
     object-position: center top;
   }
 
-  /* Remove gap between cover and services slice on mobile */
-  .slice-orange, .slice { margin-top: 0 !important; }
+  /* Fix services slice white gap on mobile */
+  .page-cover { margin-bottom: -1px; }
+  .slice-orange, .slice { margin-top: -1px !important; }
 
   /* Services slice — reduce diagonal space on mobile */
   .diagonal-bottom { padding-bottom: calc(24px + 40px); }
@@ -575,17 +576,15 @@ input[name="company"] { display: none !important; }
 
   /* Quote card */
   .quote-card { padding: 20px 16px 16px; }
-  .quote-card blockquote { font-size: 1rem; padding-left: 8px; }
+  .quote-card blockquote { font-size: 1rem; padding-left: 0; }
 
   /* Testimonials on mobile */
   .quote-card .quote-mark { display: none; }
-  .quote-card { padding: 20px 16px 16px; }
-  .quote-card blockquote { padding-left: 0; }
   #testimonials .carousel-control-prev,
   #testimonials .carousel-control-next { display: none; }
-  #testimonials .carousel-indicators { 
-    position: static; 
-    margin-top: 16px; 
+  #testimonials .carousel-indicators {
+    position: static;
+    margin-top: 16px;
     justify-content: center;
   }
 

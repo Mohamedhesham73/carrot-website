@@ -113,13 +113,16 @@ main > section:first-child { margin-top: 0 !important; }
    4) COVER / HERO
    ========================================= */
 .page-cover {
-    overflow: hidden;
+  overflow: hidden;
+  line-height: 0;
+  font-size: 0;
 }
 .page-cover .cover-img {
   width: 100%;
   height: clamp(400px, 62vh, 780px);
   object-fit: cover;
   object-position: center 40%;
+  display: block;
 }
 
 .hero { padding: 80px 0; }
@@ -146,7 +149,6 @@ main > section:first-child { margin-top: 0 !important; }
   background: linear-gradient(170deg, rgba(0,0,0,.65) 0%, rgba(0,0,0,.4) 100%);
 }
 .hero-cover > * { position: relative; z-index: 1; }
-
 
 /* =========================================
    5) LAYOUT
@@ -386,7 +388,7 @@ section[id] { scroll-margin-top: 100px; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 15% center; 
+  object-position: 15% center;
   display: block;
 }
 
@@ -539,7 +541,7 @@ input[name="company"] { display: none !important; }
 
 /* Services slice — flush against cover on all screens */
 .page-cover + section.slice-orange {
-  margin-top: 0;
+  margin-top: 0 !important;
   display: block;
 }
 
@@ -555,11 +557,8 @@ input[name="company"] { display: none !important; }
   .hero-cover .lead { font-size: .95rem; }
   .hero-cover .btn { font-size: .9rem; padding: .5rem 1rem; }
 
-  .footer-col:last-child { grid-column: 1 / -1; }
-
-  .page-cover { display: block; line-height: 0; }
-
   /* Footer — brand takes full width, rest in 2 cols */
+  .footer-col:last-child { grid-column: 1 / -1; }
   .footer-col--brand { grid-column: 1 / -1; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
   .footer-grid { gap: 24px; }
 
@@ -570,10 +569,6 @@ input[name="company"] { display: none !important; }
     object-fit: contain;
     object-position: center top;
   }
-
-  /* Fix services slice white gap on mobile */
-  .page-cover { margin-bottom: -1px; }
-  .slice-orange, .slice { margin-top: -1px !important; }
 
   /* Services slice — reduce diagonal space on mobile */
   .diagonal-bottom { padding-bottom: calc(24px + 40px); }
@@ -599,7 +594,7 @@ input[name="company"] { display: none !important; }
   /* Pricing */
   .pricing-price { font-size: 1.3rem; }
 
-  /* Contact — stack vertically */
+  /* Contact */
   .contact-banner-wrap { min-height: 220px; }
 
   /* Footer */

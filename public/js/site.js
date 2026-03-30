@@ -14,12 +14,29 @@ if (!sessionStorage.getItem('welcomeSeen')) {
     const popup = document.getElementById('welcomePopup');
     const closeBtn = document.getElementById('welcomeClose');
     const actionBtn = document.getElementById('welcomeBtn');
+    const msgEl = document.getElementById('welcomeMsg');
     if (!popup) return;
+
+    // Show popup
     popup.classList.add('show');
+
+    // Typewriter effect
+    const fullText = msgEl.getAttribute('data-text');
+    msgEl.textContent = '';
+    let i = 0;
+    const typer = setInterval(() => {
+      msgEl.textContent += fullText[i];
+      i++;
+      if (i >= fullText.length) clearInterval(typer);
+    }, 30);
+
+    // Auto close after 3 seconds
     function closePopup() {
       popup.classList.remove('show');
       sessionStorage.setItem('welcomeSeen', '1');
+      clearInterval(typer);
     }
+    setTimeout(closePopup, 6000);
     closeBtn.addEventListener('click', closePopup);
     actionBtn.addEventListener('click', closePopup);
     popup.addEventListener('click', (e) => {

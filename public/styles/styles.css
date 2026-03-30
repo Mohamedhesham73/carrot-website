@@ -563,6 +563,9 @@ input[name="company"] { display: none !important; }
     object-position: center top;
   }
 
+  /* Remove gap between cover and services slice on mobile */
+  .slice-orange, .slice { margin-top: 0 !important; }
+
   /* Services slice — reduce diagonal space on mobile */
   .diagonal-bottom { padding-bottom: calc(24px + 40px); }
   .diagonal-bottom::after { height: 40px; }

@@ -541,7 +541,7 @@ input[name="company"] { display: none !important; }
 
 /* Services slice — flush against cover on all screens */
 .page-cover + section.slice-orange {
-  margin-top: 0 !important;
+  margin-top: -4px !important;
   display: block;
 }
 

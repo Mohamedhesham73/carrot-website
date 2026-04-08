@@ -578,6 +578,11 @@ input[name="company"] { display: none !important; }
   object-fit: contain;
   margin: 0 auto 16px;
   display: block;
+  border-radius: 16px;
+}
+[data-bs-theme="dark"] .welcome-rabbit {
+  mix-blend-mode: multiply;
+  background: transparent;
 }
 .welcome-title {
   font-size: 1.15rem;

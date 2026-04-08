@@ -581,8 +581,8 @@ input[name="company"] { display: none !important; }
   border-radius: 16px;
 }
 [data-bs-theme="dark"] .welcome-rabbit {
-  mix-blend-mode: multiply;
-  background: transparent;
+  background: #2a2a2a;
+  border-radius: 16px;
 }
 .welcome-title {
   font-size: 1.15rem;
